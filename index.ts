@@ -14,9 +14,6 @@ customTip?.addEventListener("click", calculateCustomTip); //optional chaining
 buttons.forEach((button) => {
     button.addEventListener("click", () => calculateTip(button))
 });
-// const mujListener = (event) => {event.target.innerText = "Ahoj"};
-
-// function addEventListener(eventType: String, listener: (event: HTMLEvent) => void)
 
 reset?.addEventListener("click", resetAll)
 
