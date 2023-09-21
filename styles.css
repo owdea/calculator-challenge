@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root{
+    --veryDarkCyan : hsl(183, 100%, 15%);
+    --darkGrayishCyan : hsl(186, 14%, 43%);
+    --grayishCyan : hsl(184, 14%, 56%);
+    --lightGrayishCyan : hsl(185, 41%, 84%);
+    --veryLIghtGrayishCyan : hsl(189, 41%, 97%);
+    --StrongCyan : hsl(172, 67%, 45%);
+    --White : hsl(0, 0%, 100%);
+    --fontSize : 24px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Space Mono', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    font-size: 15px;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--lightGrayishCyan);
+    gap: 4rem;
+}
+
+h2{
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: var(--veryDarkCyan);
+    font-size: var(--fontSize);
+}
+
+h2 span{
+    display: block;
+}
+
+main{
+    background-color: var(--White);
+    border-radius: 20px;
+    max-width: 1000px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+main #main-left p,
+label{
+    color: gray;
+    font-size: 15px;
+}
+
+main #main-left,
+main #main-right{
+    display: flex;
+    flex-direction: column;
+}
+
+main #main-left{
+    gap: 2rem;
+}
+
+
+main #main-left input{
+    margin-top: 0.3rem;
+    text-align: end;
+    border: transparent;
+    background: var(--veryLIghtGrayishCyan);
+    padding: 0.5rem 0.4rem;
+    cursor: pointer;
+}
+
+@media all and (min-width: 401px){
+    main #main-left input:focus{
+        outline: none;
+    }
+}
+
+main #main-left input:focus{
+    border: 1px solid var(--StrongCyan);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance:none;
+    margin: 3px;
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+#bill,
+#number-people
+{
+    display: flex;
+    position: relative;
+}
+#bill input,
+#number-people input{
+    flex :1;
+    color:  var(--veryDarkCyan);
+}
+
+#bill img,
+#number-people img{
+    width: 15px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 15px;
+    left: 1rem;
+}
+
+main #main-left-middle .percentage-choice{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    
+    width: 100%;
+}
+
+main #main-left-middle p{
+    margin-bottom: 0.5rem;
+}
+
+.button{
+    background-color: var(--veryDarkCyan);
+    color: var(--White);
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.button:hover{
+    background-color: var(--StrongCyan);
+    color: var(--veryDarkCyan);
+}
+
+.button.active{
+    background-color: var(--StrongCyan);
+    color: var(--veryDarkCyan);
+}
+
+
+main #main-left-middle input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+main #main-left #main-left-bottom p{
+    font-size: 13px;
+}
+
+main #main-left #main-left-bottom #people-information{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main #main-right{
+    gap: 3rem;
+    padding: 2rem;
+    background-color: var(--veryDarkCyan);
+    border-radius: 10px;
+}
+
+main #main-right-top,
+main #main-right-middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tip-person{
+    font-size: 13px;
+    color: var(--White);
+}
+.person{
+    color: var(--White);
+    font-size: 10px;
+    opacity: 0.7;
+}
+
+.tip-total{
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size : 30px;
+    color:  var(--StrongCyan);
+}
+
+#main-right #button-reset{
+    cursor: pointer;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+
+.has-reset-activated{
+    background-color: var(--StrongCyan);
+    color: var(--veryDarkCyan);
+}
+
+
+@media all and (max-width:800px){
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+@media all and (max-width:400px){
+    #main-left,
+    #main-right{
+        width: 100%;
+    }
+
+    main #main-left-middle .percentage-choice{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    
+    main #main-left-middle input,
+    .button{
+        width: 45%;
+        padding: 10px;
+    }
+}
+
+@media all and (max-width:300px){
+    main #main-left-middle input,
+    .button{
+        width: 100%;
+    }
+}
